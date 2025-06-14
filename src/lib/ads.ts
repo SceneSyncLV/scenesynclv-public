@@ -1,1 +1,2 @@
-export const getBannerUrl = (slotId: number) => `https://dummyimage.com/300x250/eee/333&text=Ad+${slotId}`;
+export const getBannerUrl = () =>
+  "https://<your-project-ref>.supabase.co/storage/v1/object/public/ads/test-banner.jpg";
