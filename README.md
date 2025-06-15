@@ -45,6 +45,7 @@ pnpm supabase:gen
 - Ad-slot placeholders every 4th event (see `EventCard`)
 - **Featured checkout:** Sign in, click "Feature for 24h ($10)" on your event, pay with Stripe, and your event is featured for 24 hours.
 - **Event detail pages:** Deep-link to `/event/[id]` for full flyer, share, and OpenGraph preview.
+- **Search & sort:** Search by title/venue, sort by date or price, and enjoy a skeleton shimmer while loading.
 
 ## UI Hooks
 - Genre dropdown and "Cheap only" toggle powered by Supabase events table (see `Filters`)
@@ -58,6 +59,7 @@ pnpm supabase:gen
 - To enable alerts, sign in with GitHub and save your alert preferences using the form at the top of the event list.
 - To feature your event, sign in and click the "Feature for 24h ($10)" button on your event card.
 - To share or deep-link to an event, use the event detail page `/event/[id]`.
+- Use the search bar and sort dropdown to quickly find and order events.
 
 📂 Requires public Supabase storage bucket named flyers (already created).
 
