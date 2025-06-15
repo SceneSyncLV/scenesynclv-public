@@ -46,6 +46,12 @@ pnpm supabase:gen
 - Genre dropdown and "Cheap only" toggle powered by Supabase events table (see `Filters`)
 - Ad-slot skeletons: every 4th event card reserves a 300×250 slot (see `EventCard`)
 
+## Usage
+
+- Use the genre dropdown and "Cheap only" checkbox to filter the event list in real time.
+- Events are fetched live from Supabase and sorted by date.
+- Each event card shows title, venue, date, price, and flyer thumbnail (if available).
+
 📂 Requires public Supabase storage bucket named flyers (already created).
 
 ---
