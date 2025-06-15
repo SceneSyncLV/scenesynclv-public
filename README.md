@@ -23,7 +23,13 @@ pnpm install
 pnpm dev
 ```
 
-4. (Optional) Generate Supabase types:
+4. Build for production:
+
+```sh
+pnpm build
+```
+
+5. (Optional) Generate Supabase types:
 
 ```sh
 pnpm supabase:gen
