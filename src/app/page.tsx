@@ -63,7 +63,7 @@ export default async function Home() {
         )}
       </div>
       <div className="my-8">
-        <Map events={filtered} />
+        <Map />
       </div>
     </main>
   );
