@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Map from "../components/Map";
 import Filters from '../components/Filters';
 import EventCard from '../components/EventCard';
+import AlertForm from '../components/AlertForm';
 import type { Event } from "../lib/types";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
   const [genreFilter, setGenreFilter] = useState("");
   const [cheapOnly, setCheapOnly] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     async function fetchEvents() {
@@ -21,6 +23,7 @@ export default function Home() {
       setLoading(false);
     }
     fetchEvents();
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
   }, []);
 
   const genres = Array.from(new Set(events.map(e => e.genre).filter(Boolean)));
@@ -32,6 +35,7 @@ export default function Home() {
   return (
     <main className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Las Vegas Events</h1>
+      {user && <AlertForm genres={genres} />}
       <Filters
         genres={genres}
         onGenre={setGenreFilter}

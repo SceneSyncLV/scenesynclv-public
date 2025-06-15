@@ -51,6 +51,7 @@ pnpm supabase:gen
 - Use the genre dropdown and "Cheap only" checkbox to filter the event list in real time.
 - Events are fetched live from Supabase and sorted by date.
 - Each event card shows title, venue, date, price, and flyer thumbnail (if available).
+- To enable alerts, sign in with GitHub and save your alert preferences using the form at the top of the event list.
 
 📂 Requires public Supabase storage bucket named flyers (already created).
 
