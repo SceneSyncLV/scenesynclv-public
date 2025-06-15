@@ -15,3 +15,14 @@ export interface AlertPref {
   cheap_only: boolean;
   created_at: string;
 }
+
+export interface EventFront {
+  id: string;
+  title: string;
+  starts_at: string;
+  venue_name: string;
+  genre: string | null;
+  price: string | null;
+  flyer_url: string | null;
+  featured_until: string | null;
+}

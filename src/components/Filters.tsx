@@ -3,17 +3,19 @@ import { supabase } from "../lib/supabase";
 
 interface FiltersProps {
   genres: (string | null)[];
-  onGenre: (g: string | null) => void;
-  cheapOnly: boolean;
-  onCheap: (b: boolean) => void;
+  genre: string | null;
+  setGenre: (g: string | null) => void;
+  cheap: boolean;
+  setCheap: (b: boolean) => void;
 }
 
-export default function Filters({ genres, onGenre, cheapOnly, onCheap }: FiltersProps) {
+export default function Filters({ genres, genre, setGenre, cheap, setCheap }: FiltersProps) {
   return (
     <div className="flex gap-2 flex-wrap items-center mb-4">
       <select
         className="border rounded px-2 py-1"
-        onChange={e => onGenre(e.target.value || null)}
+        value={genre || ""}
+        onChange={e => setGenre(e.target.value || null)}
       >
         <option value="">All Genres</option>
         {genres.filter(Boolean).map(g => (
@@ -23,8 +25,8 @@ export default function Filters({ genres, onGenre, cheapOnly, onCheap }: Filters
       <label className="flex items-center gap-1 cursor-pointer">
         <input
           type="checkbox"
-          checked={cheapOnly}
-          onChange={e => onCheap(e.target.checked)}
+          checked={cheap}
+          onChange={e => setCheap(e.target.checked)}
         />
         <span>Cheap only (≤ $15)</span>
       </label>

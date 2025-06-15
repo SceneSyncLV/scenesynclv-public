@@ -6,6 +6,7 @@ import Map from "../components/Map";
 import Filters from '../components/Filters';
 import EventCard from '../components/EventCard';
 import AlertForm from '../components/AlertForm';
+import AdBanner from '../components/AdBanner';
 import type { Event } from "../lib/types";
 
 export default function Home() {
@@ -48,9 +49,10 @@ export default function Home() {
         ) : filtered.length === 0 ? (
           <div>No events found.</div>
         ) : (
-          filtered.map((event, idx) => (
-            <EventCard key={event.id} event={event} idx={idx} />
-          ))
+          filtered.map((event, idx) => [
+            <EventCard key={event.id} event={event} idx={idx} />,
+            (idx + 1) % 4 === 0 ? <AdBanner key={`ad-${idx}`} /> : null
+          ])
         )}
       </div>
       <div className="my-8">

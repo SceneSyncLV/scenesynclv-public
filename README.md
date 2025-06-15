@@ -37,6 +37,8 @@ pnpm supabase:gen
 
 ## Features
 - Event listing with genre/date/cheap filters
+- Ad slots every 4th event
+- Usage demo: ![Demo GIF](demo.gif)
 - Leaflet map of events
 - Admin page with Supabase Auth (email + OTP)
 - Event editing and flyer upload

@@ -9,8 +9,12 @@ interface EventCardProps {
 export default function EventCard({ event, idx }: EventCardProps) {
   const priceNum = event.price ? parseFloat(event.price) : 0;
   const isCheap = event.price && !isNaN(priceNum) && priceNum <= 15;
+  const isFeatured = event.featured_until && new Date(event.featured_until) >= new Date();
   return (
-    <div className="rounded bg-slate-800 p-4 text-white flex gap-4 items-center">
+    <div className="relative rounded bg-slate-800 p-4 text-white flex gap-4 items-center">
+      {isFeatured && (
+        <span className="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded shadow">FEATURED</span>
+      )}
       <div className="w-24 h-24 relative flex-shrink-0 bg-gray-700 rounded overflow-hidden">
         {event.flyer_url ? (
           <Image
