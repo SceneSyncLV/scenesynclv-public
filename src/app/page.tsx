@@ -3,8 +3,8 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Map from "@/components/Map";
-import Filters from "@/components/Filters";
-import EventCard from "@/components/EventCard";
+import Filters from '../components/Filters';
+import EventCard from '../components/EventCard';
 
 function unique<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
