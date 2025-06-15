@@ -5,4 +5,5 @@ export interface Event {
   venue_name: string;
   price: string | null;
   flyer_url: string | null;
+  genre: string | null;
 }
