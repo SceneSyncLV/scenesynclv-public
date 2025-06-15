@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { Event } from "../lib/types";
+import FeatureButton from "./FeatureButton";
+import { useEffect, useState } from "react";
 
 interface EventCardProps {
   event: Event;
@@ -10,6 +12,13 @@ export default function EventCard({ event, idx }: EventCardProps) {
   const priceNum = event.price ? parseFloat(event.price) : 0;
   const isCheap = event.price && !isNaN(priceNum) && priceNum <= 15;
   const isFeatured = event.featured_until && new Date(event.featured_until) >= new Date();
+  const [user, setUser] = useState<any>(null);
+  useEffect(() => {
+    (async () => {
+      const { data } = await import("../lib/supabase").then(m => m.supabase.auth.getUser());
+      setUser(data.user);
+    })();
+  }, []);
   return (
     <div className="relative rounded bg-slate-800 p-4 text-white flex gap-4 items-center">
       {isFeatured && (
@@ -44,6 +53,9 @@ export default function EventCard({ event, idx }: EventCardProps) {
             </span>
           )}
         </div>
+        {user && !isFeatured && (
+          <FeatureButton eventId={event.id} />
+        )}
       </div>
     </div>
   );

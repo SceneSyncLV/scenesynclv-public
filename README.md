@@ -43,6 +43,7 @@ pnpm supabase:gen
 - Admin page with Supabase Auth (email + OTP)
 - Event editing and flyer upload
 - Ad-slot placeholders every 4th event (see `EventCard`)
+- **Featured checkout:** Sign in, click "Feature for 24h ($10)" on your event, pay with Stripe, and your event is featured for 24 hours.
 
 ## UI Hooks
 - Genre dropdown and "Cheap only" toggle powered by Supabase events table (see `Filters`)
@@ -54,8 +55,13 @@ pnpm supabase:gen
 - Events are fetched live from Supabase and sorted by date.
 - Each event card shows title, venue, date, price, and flyer thumbnail (if available).
 - To enable alerts, sign in with GitHub and save your alert preferences using the form at the top of the event list.
+- To feature your event, sign in and click the "Feature for 24h ($10)" button on your event card.
 
 📂 Requires public Supabase storage bucket named flyers (already created).
+
+---
+
+See `README-stripe.md` for Stripe setup instructions.
 
 ---
 
