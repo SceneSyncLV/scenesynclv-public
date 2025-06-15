@@ -1,8 +1,8 @@
 "use client";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../lib/supabase";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Map from "@/components/Map";
+import Map from "../components/Map";
 import Filters from '../components/Filters';
 import EventCard from '../components/EventCard';
 
