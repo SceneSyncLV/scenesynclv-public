@@ -35,6 +35,6 @@ function ShareButton({ eventId }: { eventId: string }) {
     }
   }
   return (
-    <button onClick={handleShare} className="mt-4 px-4 py-2 rounded bg-emerald-600 text-white font-bold hover:bg-emerald-700">Share</button>
+    <button onClick={handleShare} aria-label="Share event" className="mt-4 px-4 py-2 rounded bg-emerald-600 text-white font-bold hover:bg-emerald-700 focus-visible:ring-2 focus-visible:ring-emerald-400">Share</button>
   );
 }

@@ -32,7 +32,7 @@ export default function EventCard({ event, idx }: EventCardProps) {
               src={event.flyer_url}
               alt={event.title}
               fill
-              className="object-cover"
+              className="object-cover focus-visible:ring-2 focus-visible:ring-emerald-400"
               sizes="96px"
             />
           ) : (

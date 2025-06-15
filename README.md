@@ -35,6 +35,17 @@ pnpm build
 pnpm supabase:gen
 ```
 
+## Development
+
+To check code quality and run tests:
+
+```sh
+pnpm lint && pnpm test
+```
+
+- `pnpm lint` runs ESLint with accessibility rules.
+- `pnpm test` runs Vitest and React Testing Library.
+
 ## Features
 - Event listing with genre/date/cheap filters
 - Ad slots every 4th event
