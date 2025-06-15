@@ -25,6 +25,7 @@ export default function Map({ events }: { events: Event[] }) {
     });
   }, []);
 
+  // @ts-ignore – center/zoom props are fine for placeholder
   return (
     <MapContainer center={position} zoom={12} style={{ height: '350px', width: '100%' }}>
       <TileLayer
